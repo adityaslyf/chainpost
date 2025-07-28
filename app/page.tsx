@@ -15,15 +15,12 @@ import {
   Globe,
   Rocket,
   Link,
-  BarChart3,
-  DollarSign,
-  Activity
+  BarChart3
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import { AnimatedGrid, AnimatedGridItem } from "@/components/ui/animated-grid"
 import { FeatureCard, FeatureGrid } from "@/components/ui/feature-grid"
-import { StatCard, StatsGrid } from "@/components/ui/stats-grid"
 import { GridPattern, AnimatedGridPattern } from "@/components/ui/grid-pattern"
 
 const fadeInUp = {
@@ -120,36 +117,7 @@ export default function Home() {
               </Button>
             </motion.div>
 
-            {/* Enhanced Stats Grid */}
-            <motion.div variants={fadeInUp}>
-              <StatsGrid cols={3}>
-                <StatCard
-                  value={10000}
-                  label="Posts Tokenized"
-                  suffix="+"
-                  icon={Link}
-                  gradient="from-purple-500 to-blue-500"
-                  index={0}
-                />
-                <StatCard
-                  value={25000}
-                  label="Active Traders"
-                  suffix="+"
-                  icon={Users}
-                  gradient="from-blue-500 to-cyan-500"
-                  index={1}
-                />
-                <StatCard
-                  value={500}
-                  label="Volume Traded"
-                  prefix="$"
-                  suffix="K"
-                  icon={DollarSign}
-                  gradient="from-cyan-500 to-purple-500"
-                  index={2}
-                />
-              </StatsGrid>
-            </motion.div>
+
           </motion.div>
         </div>
       </section>
@@ -343,60 +311,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Stats Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Platform Metrics
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Real numbers from our growing ecosystem
-            </p>
-          </motion.div>
 
-          <StatsGrid cols={4}>
-            <StatCard
-              value={156}
-              label="Subreddits Integrated"
-              icon={Globe}
-              gradient="from-purple-500 to-pink-500"
-              index={0}
-            />
-            <StatCard
-              value={98}
-              label="Uptime Percentage"
-              suffix="%"
-              icon={Activity}
-              gradient="from-blue-500 to-cyan-500"
-              index={1}
-            />
-            <StatCard
-              value={2.4}
-              label="Avg Daily Volume"
-              prefix="$"
-              suffix="M"
-              icon={BarChart3}
-              gradient="from-green-500 to-blue-500"
-              index={2}
-            />
-            <StatCard
-              value={87}
-              label="User Satisfaction"
-              suffix="%"
-              icon={Star}
-              gradient="from-yellow-500 to-orange-500"
-              index={3}
-            />
-          </StatsGrid>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-24 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 relative overflow-hidden">
@@ -445,11 +360,11 @@ export default function Home() {
             <div className="flex justify-center items-center space-x-8 text-white/70">
               <div className="flex items-center space-x-2">
                 <Globe className="h-4 w-4" />
-                <span className="text-sm">Launching Q2 2024</span>
+                <span className="text-sm">Coming Soon</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Shield className="h-4 w-4" />
-                <span className="text-sm">Solana Powered</span>
+                <span className="text-sm">Built on Solana</span>
               </div>
             </div>
           </motion.div>
