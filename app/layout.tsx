@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito, Silkscreen, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import "@solana/wallet-adapter-react-ui/styles.css";
+import { SolanaProvider } from "@/components/SolanaProvider";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -35,7 +37,9 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} ${silkscreen.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <SolanaProvider>
+          {children}
+        </SolanaProvider>
       </body>
     </html>
   );
