@@ -52,7 +52,7 @@ export function HeroSection() {
           
           <motion.h1 
             variants={fadeInUp}
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight font-[family-name:var(--font-silkscreen)]"
           >
             Turn Reddit Posts Into
             <span className="block text-blue-600">Tradeable Coins</span>

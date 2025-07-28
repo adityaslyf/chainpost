@@ -43,7 +43,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: var(--font-urbanist), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-nunito), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains-mono), 'Fira Code', monospace;
 }
 

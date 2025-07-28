@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Urbanist, JetBrains_Mono } from "next/font/google";
+import { Nunito, Silkscreen, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const urbanist = Urbanist({
-  variable: "--font-urbanist",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const silkscreen = Silkscreen({
+  variable: "--font-silkscreen",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${nunito.variable} ${silkscreen.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
       </body>

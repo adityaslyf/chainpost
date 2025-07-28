@@ -29,7 +29,7 @@ export function CtaSection() {
             </div>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-[family-name:var(--font-silkscreen)]">
             Ready to Transform
             <span className="block">Social Trading?</span>
           </h2>
@@ -41,7 +41,7 @@ export function CtaSection() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <WaitlistInput variant="cta" className="w-full sm:w-auto" />
-          
+           
           </div>
           
           <div className="flex justify-center items-center space-x-8 text-white/70">
