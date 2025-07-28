@@ -10,29 +10,19 @@ export function SocialDock() {
     <div className="relative">
       <Dock direction="middle">
         <DockIcon>
-          <a href="#" className="flex items-center justify-center w-full h-full text-gray-800 hover:text-blue-500 transition-colors group">
-            <Icons.twitter className="size-6 group-hover:scale-110 transition-transform" />
-          </a>
+          <Icons.twitter className="size-6" />
         </DockIcon>
         <DockIcon>
-          <a href="#" className="flex items-center justify-center w-full h-full text-gray-800 hover:text-indigo-500 transition-colors group">
-            <Icons.discord className="size-6 group-hover:scale-110 transition-transform" />
-          </a>
+          <Icons.discord className="size-6" />
         </DockIcon>
         <DockIcon>
-          <a href="#" className="flex items-center justify-center w-full h-full text-gray-800 hover:text-blue-400 transition-colors group">
-            <Icons.telegram className="size-6 group-hover:scale-110 transition-transform" />
-          </a>
+          <Icons.telegram className="size-6" />
         </DockIcon>
         <DockIcon>
-          <a href="#" className="flex items-center justify-center w-full h-full text-gray-800 hover:text-orange-500 transition-colors group">
-            <Icons.reddit className="size-6 group-hover:scale-110 transition-transform" />
-          </a>
+          <Icons.reddit className="size-6" />
         </DockIcon>
         <DockIcon>
-          <a href="#" className="flex items-center justify-center w-full h-full text-gray-800 hover:text-gray-900 transition-colors group">
-            <Icons.github className="size-6 group-hover:scale-110 transition-transform" />
-          </a>
+          <Icons.github className="size-6" />
         </DockIcon>
       </Dock>
     </div>

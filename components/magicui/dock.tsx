@@ -1,8 +1,8 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
-import React, { useRef } from "react"
+import { motion, useMotionValue } from "framer-motion"
+import React from "react"
 
 export interface DockProps {
   className?: string
@@ -11,12 +11,12 @@ export interface DockProps {
 }
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
-  ({ className, children, direction = "bottom", ...props }, ref) => {
+  ({ className, children, ...props }, ref) => {
     return (
       <motion.div
         ref={ref}
         className={cn(
-          "mx-auto flex h-[58px] w-max gap-2 rounded-2xl border border-gray-200 bg-white backdrop-blur-sm p-2 shadow-lg hover:shadow-xl transition-shadow",
+          "mx-auto flex h-[58px] w-max gap-2 rounded-2xl border border-gray-200 bg-gray-100/50 backdrop-blur-sm p-2 shadow-lg hover:shadow-xl transition-shadow",
           "dark:border-neutral-800 dark:bg-neutral-900/80",
           className,
         )}
@@ -54,7 +54,7 @@ const DockIcon = React.forwardRef<HTMLDivElement, DockIconProps>(
         ref={ref}
         className={cn(
           "flex aspect-square cursor-pointer items-center justify-center rounded-lg",
-          "bg-gray-50 transition-all duration-300 hover:bg-gray-100 border border-gray-200/50",
+          "bg-white transition-all duration-300 hover:bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md",
           "dark:bg-neutral-600/40 dark:hover:bg-neutral-600/60",
           className,
         )}
