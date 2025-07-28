@@ -38,14 +38,14 @@ export function WaitlistInput({ variant = "hero", className }: WaitlistInputProp
 
   return (
     <form onSubmit={handleSubmit} className={cn("w-full max-w-md", className)}>
-      <div className="flex items-center space-x-2 p-2 rounded-full border bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-2 p-2 rounded-2xl sm:rounded-full border bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           className={cn(
-            "flex-1 px-4 py-3 rounded-full border-0 outline-none text-sm font-medium transition-colors",
+            "flex-1 px-4 py-3 sm:py-3 rounded-xl sm:rounded-full border-0 outline-none text-sm sm:text-base font-medium transition-colors min-h-[44px]",
             inputStyles
           )}
           required
@@ -54,11 +54,12 @@ export function WaitlistInput({ variant = "hero", className }: WaitlistInputProp
           type="submit"
           disabled={isLoading || !email}
           className={cn(
-            "rounded-full px-6 py-3 font-semibold transition-all duration-200 group",
+            "rounded-xl sm:rounded-full px-6 py-3 font-semibold transition-all duration-200 group whitespace-nowrap min-h-[44px]",
             buttonStyles
           )}
         >
-          {isLoading ? "Joining..." : "Join Waitlist"}
+          <span className="hidden sm:inline">{isLoading ? "Joining..." : "Join Waitlist"}</span>
+          <span className="sm:hidden">{isLoading ? "Joining..." : "Join"}</span>
           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </Button>
       </div>
