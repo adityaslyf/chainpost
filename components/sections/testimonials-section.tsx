@@ -51,7 +51,7 @@ export function TestimonialsSection() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          {relevantTweets.map((tweetId, index) => (
+          {relevantTweets.map((tweetId) => (
             <motion.div key={tweetId} variants={fadeInUp}>
               <ClientTweetCard id={tweetId} />
             </motion.div>
