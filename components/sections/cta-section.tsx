@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Bitcoin, Star, Globe, Shield, Rocket } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Bitcoin, Star, Globe, Shield, Rocket } from "lucide-react"
+import { WaitlistInput } from "@/components/ui/waitlist-input"
 
 export function CtaSection() {
   return (
@@ -40,13 +40,8 @@ export function CtaSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button size="xl" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold">
-              Join Waitlist
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="xl" variant="outline" className="border-white text-white hover:bg-white/10">
-              Learn More
-            </Button>
+            <WaitlistInput variant="cta" className="w-full sm:w-auto" />
+          
           </div>
           
           <div className="flex justify-center items-center space-x-8 text-white/70">

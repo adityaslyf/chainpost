@@ -1,9 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { GridPattern } from "@/components/ui/grid-pattern"
+import { WaitlistInput } from "@/components/ui/waitlist-input"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -71,13 +70,7 @@ export function HeroSection() {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <Button size="xl" className="bg-blue-600 hover:bg-blue-700 text-white group">
-              Join Waitlist
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="xl" variant="outline" className="border-2 hover:bg-gray-50">
-              Watch Demo
-            </Button>
+            <WaitlistInput variant="hero" className="w-full sm:w-auto" />
           </motion.div>
         </motion.div>
       </div>
