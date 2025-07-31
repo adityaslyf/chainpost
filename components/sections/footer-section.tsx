@@ -17,7 +17,7 @@ export function FooterSection() {
           
           {/* Copyright */}
           <p className="text-gray-400 text-xs sm:text-sm text-center px-4 font-nunito">
-            © 2024 TokenReddit. Built on Solana. All rights reserved.
+            © 2025 TokenReddit. Built on Solana. All rights reserved.
           </p>
         </div>
       </div>

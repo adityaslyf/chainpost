@@ -4,7 +4,6 @@ import {
   HeroSection,
   HowItWorksSection,
   FeaturesSection,
-  AudienceSection,
   CtaSection,
   FooterSection,
   HeaderSection
@@ -17,7 +16,6 @@ export default function Home() {
       <HeroSection />
       <HowItWorksSection />
       <FeaturesSection />
-      <AudienceSection />
       <CtaSection />
       <FooterSection />
     </div>
