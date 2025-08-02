@@ -28,7 +28,7 @@ export function GridPattern({
   duration = 4,
   ...props
 }: GridPatternProps) {
-  const id = `grid-pattern-${Math.random().toString(36).substr(2, 9)}`
+  const id = React.useId()
   
   return (
     <svg
@@ -101,7 +101,7 @@ export function DotPattern({
   className,
   ...props
 }: DotPatternProps) {
-  const id = `dot-pattern-${Math.random().toString(36).substr(2, 9)}`
+  const id = React.useId()
   
   return (
     <svg
@@ -182,7 +182,7 @@ export function AnimatedGridPattern({
             }}
           />
         ))}
-      </svg>
+   </svg>
     </div>
   )
 } 
