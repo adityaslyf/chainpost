@@ -71,12 +71,12 @@ export function TestimonialsSection() {
           </p>
           <div className="flex justify-center items-center space-x-6">
             <a 
-              href="https://twitter.com/search?q=%23TokenReddit" 
+              href="https://twitter.com/search?q=%23ToknReddit" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 font-medium"
             >
-              #TokenReddit
+              #redcircle
             </a>
             <a 
               href="https://twitter.com/search?q=%23SocialDeFi" 

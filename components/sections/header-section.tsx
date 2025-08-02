@@ -14,7 +14,7 @@ export function HeaderSection() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-lg sm:text-xl font-bold text-gray-900 font-silkscreen">
-              TokenReddit
+              redcircle
             </div>
           </div>
 
