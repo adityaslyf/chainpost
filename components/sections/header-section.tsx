@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { Menu, X } from 'lucide-react';
+import { useWalletConnection } from '../../hooks/useWalletConnection';
 
 export function HeaderSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { loading, error } = useWalletConnection();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -17,7 +19,6 @@ export function HeaderSection() {
               redcircle
             </div>
           </div>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a 
@@ -40,8 +41,18 @@ export function HeaderSection() {
             </a>
           </nav>
 
-          {/* Desktop Wallet Button */}
-          <div className="hidden md:block">
+          {/* Desktop Wallet Section */}
+          <div className="hidden md:flex items-center space-x-4">
+            {loading && (
+              <div className="text-sm text-blue-600">
+                Saving wallet...
+              </div>
+            )}
+            {error && (
+              <div className="text-sm text-red-600">
+                {error}
+              </div>
+            )}
             <WalletMultiButton />
           </div>
 
@@ -79,7 +90,17 @@ export function HeaderSection() {
               >
                 Community
               </a>
-              <div className="px-3 py-2">
+              <div className="px-3 py-2 space-y-2">
+                {loading && (
+                  <div className="text-sm text-blue-600">
+                    Saving wallet...
+                  </div>
+                )}
+                {error && (
+                  <div className="text-sm text-red-600">
+                    {error}
+                  </div>
+                )}
                 <WalletMultiButton />
               </div>
             </div>
@@ -88,4 +109,4 @@ export function HeaderSection() {
       </div>
     </header>
   );
-} 
+}
