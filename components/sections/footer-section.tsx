@@ -9,7 +9,7 @@ export function FooterSection() {
         <div className="flex flex-col items-center space-y-6 sm:space-y-8">
           {/* Logo */}
           <div className="text-xl sm:text-2xl font-bold text-gray-900 font-silkscreen">
-            TokenReddit
+            redcircle
           </div>
           
           {/* Social Dock */}
@@ -17,7 +17,7 @@ export function FooterSection() {
           
           {/* Copyright */}
           <p className="text-gray-400 text-xs sm:text-sm text-center px-4 font-nunito">
-            © 2024 TokenReddit. Built on Solana. All rights reserved.
+            © 2025 redcircle. Built on Solana. All rights reserved.
           </p>
         </div>
       </div>

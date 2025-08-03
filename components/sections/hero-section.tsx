@@ -62,7 +62,7 @@ export function HeroSection() {
             variants={fadeInUp}
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
           >
-            TokenReddit revolutionizes social media by letting you tokenize Reddit posts on Solana. 
+            redcircle revolutionizes social media by letting you tokenize Reddit posts on Solana. 
             Trade viral content, earn rewards, and be part of the future of social finance.
           </motion.p>
           

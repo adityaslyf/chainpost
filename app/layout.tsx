@@ -23,8 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TokenReddit - Turn Reddit Posts Into Tradeable Coins",
-  description: "TokenReddit revolutionizes social media by letting you tokenize Reddit posts on Solana. Trade viral content, earn rewards, and be part of the future of social finance.",
+  title: "redcircle - Turn Reddit Posts Into Tradeable Coins",
+  description: " revolutionizes social media by letting you tokenize Reddit posts on Solana. Trade viral content, earn rewards, and be part of the future of social finance.",
 };
 
 export default function RootLayout({
