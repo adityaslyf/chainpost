@@ -14,7 +14,7 @@ export interface User {
  */
 export async function saveWalletAddress(walletAddress: string) {
   try {
-    // First check if wallet address already exists
+    // First checUserk if wallet address already exists
     const { data: existingUser, error: fetchError } = await supabase
       .from('Users')
       .select('*')

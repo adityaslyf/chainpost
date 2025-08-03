@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { saveWalletAddress, getUserByWallet, User } from '../lib/wallet-utils';
+import { saveWalletAddress, User } from '../lib/wallet-utils';
 
 export function useWalletConnection() {
   const { publicKey, connected } = useWallet();

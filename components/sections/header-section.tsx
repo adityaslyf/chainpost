@@ -7,7 +7,7 @@ import { useWalletConnection } from '../../hooks/useWalletConnection';
 
 export function HeaderSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, loading, error, connected } = useWalletConnection();
+  const { loading, error } = useWalletConnection();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -43,11 +43,6 @@ export function HeaderSection() {
 
           {/* Desktop Wallet Section */}
           <div className="hidden md:flex items-center space-x-4">
-            {connected && user && (
-              <div className="text-sm text-gray-600">
-                Points: {user.points || 0}
-              </div>
-            )}
             {loading && (
               <div className="text-sm text-blue-600">
                 Saving wallet...
@@ -96,11 +91,6 @@ export function HeaderSection() {
                 Community
               </a>
               <div className="px-3 py-2 space-y-2">
-                {connected && user && (
-                  <div className="text-sm text-gray-600">
-                    Points: {user.points || 0}
-                  </div>
-                )}
                 {loading && (
                   <div className="text-sm text-blue-600">
                     Saving wallet...
