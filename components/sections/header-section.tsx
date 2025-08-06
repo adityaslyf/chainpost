@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 
+
 import React, { useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { Menu, X } from 'lucide-react';
@@ -41,6 +42,7 @@ export function HeaderSection() {
               Community
             </a>
             <Link href="/reddit-form" className="text-gray-600 hover:text-gray-900 transition-colors font-nunito">RedditForm</Link>
+            <Link href="/reddit-post" className="text-gray-600 hover:text-gray-900 transition-colors font-nunito">Reddit Post</Link>
           </nav>
 
           {/* Desktop Wallet Section */}
@@ -94,6 +96,9 @@ export function HeaderSection() {
               </a>
               <Link href="/reddit-form" className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors font-nunito">
                 RedditForm
+              </Link>
+              <Link href="/reddit-post" className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors font-nunito">
+                Reddit Posts
               </Link>
               <div className="px-3 py-2 space-y-2">
                 {loading && (

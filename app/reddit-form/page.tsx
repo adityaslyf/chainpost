@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { supabase } from '@/lib/Supabase-client'
+import { useWalletConnection } from '@/hooks/useWalletConnection'
 
 export default function RedditFormPage() {
   const [url, setUrl] = useState('')
@@ -12,6 +13,7 @@ export default function RedditFormPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const { user, connected, loading: walletLoading } = useWalletConnection()
 
   const validateRedditUrl = (url: string): boolean => {
     if (!url.trim()) return false
