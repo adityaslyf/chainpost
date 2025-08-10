@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { supabase } from '@/lib/Supabase-client'
-import { useWalletConnection } from '@/hooks/useWalletConnection'
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function RedditFormPage() {
   const [url, setUrl] = useState('')
@@ -13,7 +13,8 @@ export default function RedditFormPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const { user, connected, loading: walletLoading } = useWalletConnection()
+  const { data: session, status } = useSession();
+  const isRedditAuthenticated = status === "authenticated";
 
   const validateRedditUrl = (url: string): boolean => {
     if (!url.trim()) return false
@@ -133,6 +134,20 @@ export default function RedditFormPage() {
             <CardDescription className="text-gray-600 text-sm sm:text-base md:text-lg mt-2">
               Enter a Reddit post URL to get started
             </CardDescription>
+            <div className="flex flex-col items-center gap-2 mt-2">
+              {isRedditAuthenticated ? (
+                <>
+                  <span className="text-green-700 font-semibold">Logged in as {session?.user?.name || session?.user?.email || "Reddit User"}</span>
+                  <button onClick={() => signOut()} className="px-3 py-1 bg-red-500 text-white rounded">Logout</button>
+                </>
+              ) : (
+                <button onClick={() => signIn("reddit")}
+                  className="px-3 py-1 bg-orange-500 text-white rounded"
+                >
+                  Login with Reddit
+                </button>
+              )}
+            </div>
           </CardHeader>
           
           <CardContent className="px-4 sm:px-6 md:px-8 pb-6 sm:pb-8">
@@ -225,7 +240,7 @@ export default function RedditFormPage() {
               
               <Button
                 type="submit"
-                disabled={!url.trim() || !isValid || isSubmitting}
+                disabled={!url.trim() || !isValid || isSubmitting || !isRedditAuthenticated}
                 className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl disabled:transform-none disabled:shadow-none"
                 size="lg"
               >
@@ -266,6 +281,9 @@ export default function RedditFormPage() {
                   </div>
                 )}
               </Button>
+              {!isRedditAuthenticated && (
+                <p className="text-xs text-red-600 mt-2">You must be logged in with Reddit to submit a URL.</p>
+              )}
             </form>
           </CardContent>
         </Card>

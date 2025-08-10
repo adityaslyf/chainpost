@@ -6,10 +6,13 @@ import React, { useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { Menu, X } from 'lucide-react';
 import { useWalletConnection } from '../../hooks/useWalletConnection';
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export function HeaderSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { loading, error } = useWalletConnection();
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === "authenticated";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -47,11 +50,22 @@ export function HeaderSection() {
 
           {/* Desktop Wallet Section */}
           <div className="hidden md:flex items-center space-x-4">
-            {loading && (
-              <div className="text-sm text-blue-600">
-                Saving wallet...
-              </div>
+            {/* Reddit Auth Buttons */}
+            {isAuthenticated ? (
+              <>
+                <span className="text-gray-700 font-nunito mr-2">
+                  {session?.user?.name || session?.user?.email || "Reddit User"}
+                </span>
+                <button onClick={() => signOut()} className="px-3 py-1 bg-red-500 text-white rounded">Logout</button>
+              </>
+            ) : (
+              <button onClick={() => signIn("reddit")}
+                className="px-3 py-1 bg-orange-500 text-white rounded"
+              >
+                Login with Reddit
+              </button>
             )}
+            
             {error && (
               <div className="text-sm text-red-600">
                 {error}

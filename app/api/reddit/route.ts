@@ -29,7 +29,6 @@ class RedditAPI {
   }
 
   private async getAccessToken(): Promise<string> {
-    // Check if we have a valid token
     if (this.accessToken && Date.now() < this.tokenExpiry) {
       return this.accessToken;
     }
@@ -92,6 +91,7 @@ class RedditAPI {
           'Authorization': `Bearer ${accessToken}`,
           'User-Agent': 'RedCircle/1.0.0'
         }
+      
       });
 
       const data = response.data;

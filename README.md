@@ -34,3 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Reddit User Authentication (NextAuth.js)
+
+This project uses [NextAuth.js](https://next-auth.js.org/) for Reddit user authentication.
+
+### Setup Steps
+1. Go to https://www.reddit.com/prefs/apps and create a new web app.
+2. Set the redirect URI to: `http://localhost:3000/api/auth/callback/reddit` (or your deployed domain).
+3. Copy the `clientId` and `clientSecret`.
+4. Add these to your `.env.local`:
+
+```
+REDDIT_CLIENT_ID=your_reddit_client_id
+REDDIT_CLIENT_SECRET=your_reddit_client_secret
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_random_secret
+```
+
+5. Start your app and visit `/api/auth/signin` to test Reddit login.
+
+> **Note:** The Reddit OAuth callback URL must be `/api/auth/callback/reddit` for NextAuth.js to work correctly.
