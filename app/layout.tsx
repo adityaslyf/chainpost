@@ -3,6 +3,8 @@ import { Nunito, Silkscreen, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { SolanaProvider } from "@/components/SolanaProvider";
+import { SessionProvider } from "next-auth/react";
+import ClientSessionProvider from "@/components/ClientSessionProvider";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -37,9 +39,11 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} ${silkscreen.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <SolanaProvider>
-          {children}
-        </SolanaProvider>
+        <ClientSessionProvider>
+          <SolanaProvider>
+            {children}
+          </SolanaProvider>
+        </ClientSessionProvider>
       </body>
     </html>
   );
